@@ -1552,6 +1552,28 @@
         "scriptLoader": []
       }
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              window.location = 'https://asli.bangoostdigital.store/';
+              return false;
+            }
+          }
+        });
+
+        window.history.pushState('forward', null, './#forward');
+      }
+    });
+  </script>
   </body>
   <!-- Mirrored from linktr.ee/bangoost.digital by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Jun 2023 17:10:26 GMT -->
 </html>
